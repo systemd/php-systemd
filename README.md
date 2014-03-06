@@ -8,7 +8,7 @@ Installation
 
     sudo yum install -y php-devel systemd-devel
     phpize
-    ./configure --enable-systemd
+    ./configure --with-systemd
     make
     sudo make install
     echo "extension=systemd.so" | sudo tee /etc/php.d/systemd.ini
