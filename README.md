@@ -1,4 +1,4 @@
-systemd-php
+php-systemd
 ============
 
 PHP extension allowing native interaction with systemd and journald
