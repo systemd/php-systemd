@@ -6,11 +6,11 @@ PHP extension allowing native interaction with systemd and journald
 Installation
 ============
 
-    yum install php-devel systemd-devel
+    sudo yum install -y php-devel systemd-devel
     phpize
     ./configure --enable-systemd
     make
-    make install
+    sudo make install
     echo "extension=systemd.so" | sudo tee /etc/php.d/systemd.ini
     echo "<?php echo sd_journal_send('MESSAGE=hello world');" | php
     
