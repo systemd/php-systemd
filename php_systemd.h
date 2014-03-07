@@ -1,6 +1,6 @@
 #ifndef PHP_SYSTEMD_H
 #define PHP_SYSTEMD_H 1
-#define PHP_SYSTEMD_VERSION "0.1"
+#define PHP_SYSTEMD_VERSION "0.1.2"
 #define PHP_SYSTEMD_EXTNAME "systemd"
 
 PHP_FUNCTION(sd_journal_send);
