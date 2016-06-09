@@ -6,7 +6,9 @@ PHP extension allowing native interaction with systemd and journald
 Installation
 ============
 
-    sudo yum install -y php-devel systemd-devel
+    sudo dnf install php-devel systemd-devel
+    sudo apt install php5-dev  libsystemd-dev
+
     phpize
     ./configure --with-systemd
     make

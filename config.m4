@@ -5,7 +5,7 @@ PHP_ARG_WITH(systemd, enable support for systemd,
 if test "$PHP_SYSTEMD" != "no"; then
 
   SEARCH_PATH="/usr /usr/local"
-  SEARCH_FOR="/include/sd-journal.h"
+  SEARCH_FOR="/include/systemd/sd-journal.h"
 
   SYSTEMD_DIR=
 
@@ -32,7 +32,7 @@ if test "$PHP_SYSTEMD" != "no"; then
 
   PHP_ADD_INCLUDE($SYSTEMD_DIR/include)
 
-  LIBNAME=systemd-journal
+  LIBNAME=systemd
   LIBSYMBOL=sd_journal_sendv
 
   if test "x$PHP_LIBDIR" = "x"; then
