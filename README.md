@@ -47,8 +47,8 @@ Quick example:
 ``` {.php}
 <?php
 sd_journal_send('MESSAGE=Hello world.');
-sd_journal_send('MESSAGE=Hello, again, world.', 'FIELD2=Greetings!', 'FIELD3=Guten tag.');
-sd_journal_send('ARBITRARY=anything', 'FIELD3=Greetings!');
+// message with priority "3" (warning) and identifier (also called *TAG*) set to "appname" 
+sd_journal_send('MESSAGE=Error message','PRIORITY=3', 'SYSLOG_IDENTIFIER=appname');"
 ```
 
 Notes:
