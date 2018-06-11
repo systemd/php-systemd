@@ -30,11 +30,11 @@ ZEND_GET_MODULE(systemd)
 PHP_FUNCTION(sd_journal_send)
 {
     struct iovec *iov = NULL;
-    zval ***args;
+    zval *args;
     int argc, len, i;
     char *val;
     
-    if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "+", &args, &argc) != SUCCESS) {
+    if (zend_parse_parameters(ZEND_NUM_ARGS(), "+", &args, &argc) != SUCCESS) {
         return;
     }
     
@@ -46,10 +46,10 @@ PHP_FUNCTION(sd_journal_send)
     }
 
     // Iterate through the PHP arguments and fill the iovector.
-    for (i = 0; i < ZEND_NUM_ARGS() TSRMLS_CC; ++i) {
-        convert_to_string_ex(args[i]);
-        val = Z_STRVAL_PP(args[i]);
-        len = Z_STRLEN_PP(args[i]);
+    for (i = 0; i < argc; ++i) {
+        convert_to_string_ex(&args[i]);
+        val = Z_STRVAL(args[i]);
+        len = Z_STRLEN(args[i]);
         iov[i].iov_base = val;
         iov[i].iov_len = len;
     }
