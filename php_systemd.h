@@ -8,4 +8,8 @@ PHP_FUNCTION(sd_journal_send);
 extern zend_module_entry systemd_module_entry;
 #define phpext_systemd_ptr &systemd_module_entry
 
+#ifndef SD_JOURNAL_SUPPRESS_LOCATION
+#define SD_JOURNAL_SUPPRESS_LOCATION 1
+#endif
+
 #endif
