@@ -5,8 +5,13 @@
 #include "php_systemd.h"
 #include <systemd/sd-journal.h>
 
+ZEND_BEGIN_ARG_INFO_EX(arginfo_sd_journal_send, 0, 0, 3)
+ZEND_ARG_TYPE_INFO(0, tags, IS_STRING, 0)
+ZEND_ARG_VARIADIC_INFO(0, 3)
+ZEND_END_ARG_INFO()
+
 zend_function_entry systemd_functions[] = {
-    PHP_FE(sd_journal_send, NULL)
+    PHP_FE(sd_journal_send, arginfo_sd_journal_send)
     {NULL, NULL, NULL} // Sentinel
 };
 
